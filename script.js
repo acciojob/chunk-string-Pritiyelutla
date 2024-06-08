@@ -1,25 +1,10 @@
 function stringChop(str, size) {
     // your code here
-    let res = [];
-    //console.log(str);
-    for(let i=0; i<str.length; i++)
-    {
-        let j=1;
-        while(j <= size)
-        {
-            if(j == str.length)
-            {
-                break;
-            }
-            j++;
-        }
-        
-        let word = str.slice(i,j); 
-        console.log(word);
-        res.push(word);
-        i = j;
+    const chunks = [];
+    for (let i = 0; i < str.length; i = i+ size) {
+        chunks.push(str.slice(i, i + size));
     }
-    return res;
+    return chunks;
   }
 
 // Do not change the code below
